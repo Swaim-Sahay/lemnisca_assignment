@@ -2,8 +2,6 @@ import time
 import json
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
 from pydantic import BaseModel
 from typing import Dict, Any, List, Optional
 from uuid import uuid4
@@ -36,11 +34,6 @@ except Exception as e:
     print(f"Warning: Could not load vector store on startup: {e}")
     store = None
 
-app.mount("/frontend", StaticFiles(directory="frontend"), name="frontend")
-
-@app.get("/")
-def serve_index():
-    return FileResponse("frontend/index.html")
 
 class QueryRequest(BaseModel):
     question: str
