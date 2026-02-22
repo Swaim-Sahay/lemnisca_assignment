@@ -39,7 +39,7 @@ chatForm.addEventListener('submit', async (e) => {
             body.conversation_id = conversationId;
         }
 
-        const response = await fetch('https://lemnisca-assignment-v8rk.vercel.app/query', {
+        const response = await fetch('https://lemniscaassignment-production.up.railway.app/query', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(body)
