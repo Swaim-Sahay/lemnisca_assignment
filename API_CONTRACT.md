@@ -152,6 +152,6 @@ Your API must be accessible for evaluation. Choose one:
 
 Document any required environment variables in your README:
 ```bash
-GROQ_API_KEY=your_groq_api_key
+GROQ_API_KEY=your_groq_api_key_here
 PORT=8000  # Optional, defaults to 8000
 ```

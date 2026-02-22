@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clearpath Support</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/frontend/style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <!-- Sidebar Debug Panel -->
+        <aside class="debug-panel">
+            <div class="panel-header">
+                <h2>System Stats</h2>
+                <div class="status-indicator active"></div>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">Model Used</span>
+                <span class="stat-value" id="debug-model">-</span>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">Classification</span>
+                <span class="stat-value" id="debug-classification">-</span>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">Latency</span>
+                <span class="stat-value" id="debug-latency">-</span>
+            </div>
+
+            <div class="stat-row">
+                <div class="stat-card half">
+                    <span class="stat-label">In Tokens</span>
+                    <span class="stat-value" id="debug-in-tokens">-</span>
+                </div>
+                <div class="stat-card half">
+                    <span class="stat-label">Out Tokens</span>
+                    <span class="stat-value" id="debug-out-tokens">-</span>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-label">Chunks Retrieved</span>
+                <span class="stat-value" id="debug-chunks">-</span>
+            </div>
+
+            <div class="stat-card" id="flags-card">
+                <span class="stat-label">Evaluator Flags</span>
+                <div class="flags-container" id="debug-flags">
+                    <span class="flag none">None</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="chat-container">
+            <header class="chat-header">
+                <div class="branding">
+                    <div class="logo"></div>
+                    <h1>Clearpath Support</h1>
+                </div>
+                <div class="conversation-id" id="conv-id-display">New Conversation</div>
+            </header>
+
+            <div class="chat-messages" id="chat-messages">
+                <div class="message assistant-message">
+                    <div class="avatar">🤖</div>
+                    <div class="message-content">
+                        Hello! I'm the Clearpath support assistant. How can I help you today?
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <form id="chat-form">
+                    <input type="text" id="user-input"
+                        placeholder="Ask about plans, integrations, or troubleshooting..." autocomplete="off">
+                    <button type="submit" id="send-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="/frontend/script.js"></script>
+</body>
+
+</html>
