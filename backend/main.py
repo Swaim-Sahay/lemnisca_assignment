@@ -6,11 +6,20 @@ from pydantic import BaseModel
 from typing import Dict, Any, List, Optional
 from uuid import uuid4
 
-import backend.config as config
-from backend.rag import DocumentStore
-from backend.router import classify_query, get_model_for_classification
-from backend.llm import generate_answer
-from backend.evaluator import evaluate_response
+try:
+    # When run from repo root (local dev), backend is a package
+    import backend.config as config
+    from backend.rag import DocumentStore
+    from backend.router import classify_query, get_model_for_classification
+    from backend.llm import generate_answer
+    from backend.evaluator import evaluate_response
+except ImportError:
+    # When run from backend/ dir (Vercel deployment), modules are top-level
+    import config  # type: ignore
+    from rag import DocumentStore  # type: ignore
+    from router import classify_query, get_model_for_classification  # type: ignore
+    from llm import generate_answer  # type: ignore
+    from evaluator import evaluate_response  # type: ignore
 
 app = FastAPI()
 

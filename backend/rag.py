@@ -6,7 +6,11 @@ from sentence_transformers import SentenceTransformer
 from pypdf import PdfReader
 from pathlib import Path
 
-import backend.config as config
+try:
+    import backend.config as config
+except ImportError:
+    import config  # type: ignore
+
 
 class DocumentStore:
     def __init__(self):
